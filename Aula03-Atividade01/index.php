@@ -9,33 +9,34 @@
 </head>
 
 <body>
-    <section>
-        <h1>Pizzaria</h1>
-        <h3>Novo Pedido</h3>
-        <form action="#" method="post">
-            <label for="txtnome">Seu nome:</label>
-            <input type="text" name="txtnome">
-            <br><br>
-            <label for="sabor">Escolha o sabor da pizza:</label>
-            <select name="sltsabor" id="sabores">
-                <option value="Mussarela">Mussarela</option>
-                <option value="Calabresa">Calabresa</option>
-                <option value="Caipira">Caipira</option>
-                <option value="Brocolis">Brócolis</option>
-            </select>
-            <br><br>
-            <label for="">Borda recheada:</label>
-            <input type="radio" value="Não" name="rdborda">Não
-            <input type="radio" value="Sim" name="rdborda">Sim
-            <br><br>
-            <label for="">Bebidas (você pode escolher mais de uma):</label><br>
-            <input type="checkbox" value="8" name="ckbebidas[]">Refri de lata - R$8,00 <br>
-            <input type="checkbox" value="10" name="ckbebidas[]">Suco 500ml - R$10,00 <br>
-            <input type="checkbox" value="5" name="ckbebidas[]">Água 500ml - R$5,00 <br>
-            <br><br>
-            <input type="submit" value="Finalizar Pedido" name="btnpedido">
-        </form>
-    </section>
+    <main>
+        <section>
+            <h1>TopPizzaria</h1>
+            <h3>Novo Pedido</h3>
+            <form action="#" method="post">
+                <label for="txtnome">Seu nome:</label><br>
+                <input type="text" name="txtnome" id="txtnome" required>
+                <br><br>
+                <label for="sabor">Escolha o sabor da pizza:</label><br>
+                <select name="sltsabor" id="sabores">
+                    <option value="Mussarela">Mussarela - R$ 30,00</option>
+                    <option value="Calabresa">Calabresa - R$ 32,00</option>
+                    <option value="Caipira">Caipira - R$ 35,00</option>
+                    <option value="Brocolis">Brócolis - R$ 37,00</option>
+                </select>
+                <br><br>
+                <label for="rdsim">Borda recheada:</label><br>
+                <input type="radio" value="Não" name="rdborda" id="rdnao" checked>Não
+                <input type="radio" value="Sim" name="rdborda" id="rdsim">Sim
+                <br><br>
+                <label for="">Bebidas (você pode escolher mais de uma):</label><br>
+                <input type="checkbox" value="8" name="ckbebidas[]">Refri de lata - R$ 8,00 <br>
+                <input type="checkbox" value="10" name="ckbebidas[]">Suco 500ml - R$ 10,00 <br>
+                <input type="checkbox" value="5" name="ckbebidas[]">Água 500ml - R$ 5,00 <br>
+                <input type="submit" value="Finalizar Pedido" name="btnpedido">
+            </form>
+        </section>
+    </main>
 
 </html>
 
@@ -60,9 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($borda == "Sim") {
         $precoPizza += 5;
-    } else {
-        $preco;
-    }
+    } 
+    // else {
+    //     $preco;
+    // }
 
     echo "<h4>Resumo do Pedido</h4>";
     echo "<br>Nome: " . $nome;
@@ -72,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $precoBebida = 0;
     $tipoBebida = "";
-  
+
     foreach ($bebidas as $bebida) {
 
         if ($bebida == 8) {
@@ -89,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tipoBebida = " ";
         }
         echo
-            "<ul>
+        "<ul>
                 <li>" . $tipoBebida . " - valor: R$ " . $precoBebida . ",00</li>
             </ul>";
     }
