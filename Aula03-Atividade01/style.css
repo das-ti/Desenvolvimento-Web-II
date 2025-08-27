@@ -16,6 +16,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10%;
 }
 
 section {
@@ -28,10 +29,12 @@ section {
 
 h1 {
   margin: 15px 0;
-  font-size: 32px;
+  font-size: 36px;
+  text-shadow: 1px 1px 3px #333;
 }
 
-h3 {
+h2,
+strong {
   margin: 15px 0;
   color: #e64a19;
   text-shadow: 0 0 1px #333;
@@ -59,13 +62,12 @@ select {
   font-size: 17px;
   color: #fff;
 }
-
 input[type="radio"],
 input[type="checkbox"] {
   margin: 5px;
 }
 
-input[type="submit"] {
+input[type="submit"], a {
   width: 100%;
   background-color: #ff5722;
   margin: 5px;
@@ -75,8 +77,56 @@ input[type="submit"] {
   border-radius: 7px;
   color: #fff;
   cursor: pointer;
+  font-size: 20px;
 }
 
 input[type="submit"]:hover {
-  background-color: #e64a19;
+   background-color: #e64a19;
+}
+
+#resumo-pedido {
+  width: 25%;
+  display: none;
+}
+
+#mensagem-pedido {
+   margin-bottom: 20px;
+   font-size: 22px;
+}
+
+strong {
+   font-size: 26px;
+}
+
+#lista-pedido li {
+  padding: 5px 0;
+  list-style: none;
+}
+
+#lista-bebidas {
+   margin-left: 80px;
+}
+
+#lista-bebidas li {
+   list-style: circle;
+}
+
+#total-pedido {
+   margin-top: 25px;
+   text-align: right;
+   font-size: 22px;
+}
+
+#resumo-pedido a {
+  width: auto;
+  background-color: #ff5722;
+  margin: 20px 10px;
+  padding: 13px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
 }
